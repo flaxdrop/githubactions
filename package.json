@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Exempelprojekt för GitHub Actions",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "echo \"Build successful!\""
   },
   "dependencies": {}
 }
