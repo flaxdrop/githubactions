@@ -1,0 +1,30 @@
+name: Push and build
+
+# Trigger: körs vid push till main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Steg 1: Hämta koden
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Steg 2: Sätt upp Node.js version 20
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Steg 3: Installera beroenden
+      - name: Install dependencies
+        run: npm install
+
+      # Steg 4: Kör build-kommandot
+      - name: Run build
+        run: npm run build
